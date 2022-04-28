@@ -1,0 +1,21 @@
+server:
+  port: '${MEDILAB_MONOLITH_APP_PORT:8087}'
+spring:
+  application:
+    name: medilab-morning-preclinic
+  datasource:
+    driver-class-name: '${MEDILAB_MONOLITH_APP_DB_DRIVER:com.mysql.cj.jdbc.Driver}'
+    password: '${MEDILAB_MONOLITH_APP_DB_USER_NAME:root}'
+    url: jdbc:${MEDILAB_MONOLITH_APP_DB_TYPE:mysql}://${MEDILAB_MONOLITH_APP_DB_CONTAINER_NAME:localhost}:${MEDILAB_MONOLITH_APP_DB_PORT:3306}/${MEDILAB_MONOLITH_APP_DB:medilab-preclinic-monolith}
+    username: '${MEDILAB_MONOLITH_APP_DB_PASSWORD:root}'
+  h2:
+    console:
+      enabled: false
+      path: /h2Console
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
