@@ -17,7 +17,7 @@ import com.medilab.preclinic.service.MedilabDepartmentService;
 public class DepartmentController {
 
 	@Autowired
-	private MedilabDepartmentService deptService
+	private MedilabDepartmentService deptService;
 	
 	@RequestMapping
 	public String viewDepartmentsBoard(Model model) {
