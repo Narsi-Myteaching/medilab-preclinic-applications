@@ -71,5 +71,14 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- To deploy the artifact to artifactory using the maven phase deploy:deploy -->
+	<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-95-57.ec2.internal-releases</name>
+        <url>http://3.92.228.42:8081/artifactory/libs-release</url>
+    </repository>
+</distributionManagement>
 
 </project>
