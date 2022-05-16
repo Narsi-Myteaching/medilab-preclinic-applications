@@ -74,11 +74,11 @@
 	
 	<!-- To deploy the artifact to artifactory using the maven phase deploy:deploy -->
 	<distributionManagement>
-    <!--<snapshotRepository>
+    <snapshotRepository>
         <id>snapshots</id>
         <name>ip-172-31-95-57.ec2.internal-snapshots</name>
         <url>http://52.87.214.156:8081/artifactory/libs-snapshot</url>
-    </snapshotRepository>-->
+    </snapshotRepository>
     <repository>
         <id>central</id>
         <name>ip-172-31-95-57.ec2.internal-releases</name>
