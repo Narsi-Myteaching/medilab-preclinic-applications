@@ -76,14 +76,9 @@
 	<distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ip-172-31-95-57.ec2.internal-snapshots</name>
-        <url>http://100.26.188.51:8082/artifactory/libs-snapshot</url>
+        <name>ip-172-31-12-252.ap-south-1.compute.internal-snapshots</name>
+        <url>http://52.66.250.111:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
-    <repository>
-        <id>central</id>
-        <name>ip-172-31-95-57.ec2.internal-releases</name>
-        <url>http://100.26.188.51:8082/artifactory/libs-release</url>
-    </repository>
 </distributionManagement>
 
 </project>
