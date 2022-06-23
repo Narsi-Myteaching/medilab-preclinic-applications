@@ -16,6 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<build.number></build.number>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -63,7 +64,7 @@
 	</dependencies>
 
 	<build>
-	   <finalName>medilab-morning-preclinic</finalName>
+	   <finalName>${artifactId}-${build.number}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -77,7 +78,7 @@
     <snapshotRepository>
         <id>snapshots</id>
         <name>ip-172-31-12-252.ap-south-1.compute.internal-snapshots</name>
-        <url>http://52.66.250.111:8082/artifactory/libs-snapshot-local</url>
+        <url>http://54.165.235.191:8082/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
 </distributionManagement>
 
