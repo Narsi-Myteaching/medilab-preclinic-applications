@@ -64,7 +64,7 @@
 	</dependencies>
 
 	<build>
-	   <finalName>${artifactId}-${build.number}</finalName>
+	   <finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
