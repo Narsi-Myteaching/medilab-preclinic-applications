@@ -24,3 +24,4 @@ url=$path/$artifact_name
 # Download
 echo $url
 wget  --user=$userName --password=$password $url
+copy $url medilab-morning-preclinic.war
