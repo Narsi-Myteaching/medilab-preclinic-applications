@@ -4,4 +4,4 @@
   become_user: docker-admin
   tasks: 
    - name: copy the jfrog.ssh
-     copy: src=/opt/app-files/jfrog.sh dest=/app-files
+     copy: src=/opt/app-files/jfrog.sh dest=./app-files
