@@ -12,4 +12,4 @@
    - name: execute the jfrog.sh file
      shell: sh ./app-files/jfrog.sh
    - name: build the docker image
-     shell: sudo docker build -f Dockerfile --tag medilab-cd-app-image .
+     shell: sudo docker build -f ./app-files/Dockerfile --tag medilab-cd-app-image .
