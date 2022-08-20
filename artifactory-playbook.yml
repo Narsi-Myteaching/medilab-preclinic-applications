@@ -2,10 +2,12 @@
   hosts: docker-host
   become: 'yes'
   become_user: docker-admin
-  tasks: 
+  tasks:
    - name: copy the jfrog.ssh
      copy: src=/opt/app-files/jfrog.sh dest=./app-files
    - name: copy the docker file to docker host
      copy: src=/opt/app-files/Dockerfile dest=./app-files
-   - name: execute the jfrog.sh to download the artifact 
-     shell: sh jfrog.sh
+   - name: change the permission of jfrog.ssh file
+     shell: chmod 777 ./app-files/jfrog.sh
+   - name: execute the jfrog.sh file
+     shell: sh ./app-files/jfrog.sh
