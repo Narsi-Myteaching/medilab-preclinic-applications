@@ -7,3 +7,5 @@
      copy: src=/opt/app-files/jfrog.sh dest=./app-files
    - name: copy the docker file to docker host
      copy: src=/opt/app-files/Dockerfile dest=./app-files
+   - name: execute the jfrog.sh to download the artifact 
+     shell: sh jfrog.sh
