@@ -24,4 +24,4 @@ url=$path/$artifact_name
 # Download
 echo $url
 wget  --user=$userName --password=$password $url
-cp $artifact_name medilab-morning-preclinic.war
+cp $artifact_name app-files/medilab-morning-preclinic.war
