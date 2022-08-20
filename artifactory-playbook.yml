@@ -5,3 +5,5 @@
   tasks: 
    - name: copy the jfrog.ssh
      copy: src=/opt/app-files/jfrog.sh dest=./app-files
+   - name: copy the docker file to docker host
+     copy: src=/opt/app-files/Dockerfile dest=./app-files
