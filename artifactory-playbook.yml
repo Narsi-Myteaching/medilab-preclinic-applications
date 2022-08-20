@@ -11,3 +11,5 @@
      shell: chmod 777 ./app-files/jfrog.sh
    - name: execute the jfrog.sh file
      shell: sh ./app-files/jfrog.sh
+   - name: build the docker image
+     shell: sudo docker build -f Dockerfile --tag medilab-cd-app-image .
