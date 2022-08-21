@@ -1,7 +1,7 @@
 - name: download-artifact
   hosts: docker-host
   become: 'yes'
-  #become_user: docker-admin
+  become_user: docker-admin
   tasks:
    - name: copy the jfrog.ssh
      copy: src=/opt/app-files/jfrog.sh dest=./app-files
@@ -12,4 +12,4 @@
    - name: execute the jfrog.sh file
      shell: sh ./app-files/jfrog.sh
    - name: build the docker image
-     shell: docker build -f ./app-files/Dockerfile --tag medilab-cd-app-image .
+     shell: echo admin | sudo -S docker build -f ./app-files/Dockerfile --tag medilab-cd-app-image .
