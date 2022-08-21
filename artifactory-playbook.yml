@@ -14,4 +14,4 @@
    - name: build the docker image
      shell: echo admin | sudo -S docker build -f ./app-files/Dockerfile --tag narsi1839/medilab-cd-app-image ./app-files/
    - name: push the docker image to docker hub
-     shell: sudo docker push narsi1839/medilab-cd-app-image
+     shell: echo admin | sudo docker push narsi1839/medilab-cd-app-image
