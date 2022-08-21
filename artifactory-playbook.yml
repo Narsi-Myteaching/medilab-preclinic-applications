@@ -1,4 +1,4 @@
-name: download-artifact
+- name: download-artifact
   hosts: docker-host
   become: 'yes'
   become_user: docker-admin
