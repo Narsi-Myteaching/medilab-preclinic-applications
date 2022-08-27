@@ -1,21 +1,43 @@
-server:
-  port: '${MEDILAB_MONOLITH_APP_PORT:8087}'
-spring:
-  application:
-    name: medilab-morning-preclinic
-  #datasource:
-   # driver-class-name: '${MEDILAB_MONOLITH_APP_DB_DRIVER:com.mysql.cj.jdbc.Driver}'
-    #password: '${MEDILAB_MONOLITH_APP_DB_USER_NAME:root}'
-    #url: jdbc:${MEDILAB_MONOLITH_APP_DB_TYPE:mysql}://${MEDILAB_MONOLITH_APP_DB_CONTAINER_NAME:localhost}:${MEDILAB_MONOLITH_APP_DB_PORT:3306}/${MEDILAB_MONOLITH_APP_DB:medilab-preclinic-monolith}
-    #username: '${MEDILAB_MONOLITH_APP_DB_PASSWORD:root}'
-  h2:
+#
+# Common Configuration for all the environments
+#
+spring: 
+ application: 
+  name: medilab-morning-preclinic
+ jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+ profiles: 
+   active: ${APP_PROFILE:dev} 
+   
+server: 
+ port: '${MEDILAB_MONOLITH_APP_PORT:8087}'
+
+---
+#
+# Dev Environment Configurations
+#
+spring: 
+ profiles: dev
+ datasource: 
+  driver-class-name: ${MEDILAB_MONOLITH_APP_DB_DRIVER:com.mysql.cj.jdbc.Driver}
+  url: jdbc:${MEDILAB_MONOLITH_APP_DB_TYPE:mysql}://${MEDILAB_MONOLITH_APP_DB_CONTAINER_NAME:localhost}:${MEDILAB_MONOLITH_APP_DB_PORT:3306}/${MEDILAB_MONOLITH_APP_DB:medilab-preclinic-monolith}
+  username: ${MEDILAB_MONOLITH_APP_DB_USER_NAME:root} 
+  password: ${MEDILAB_MONOLITH_APP_DB_PASSWORD:root}
+---
+#
+# QA Environment Configurations
+#
+spring: 
+ profiles: qa
+ h2:
     console:
       enabled: true
       path: /h2Console
-  #jpa:
-   # generate-ddl: true
-    #show-sql: true
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+ datasource: 
+  driver-class-name: ${DB_DRIVER:org.h2.Driver}
+  url: jdbc:${DB_TYPE:h2}:mem:${DB_SCHEMA:shopifyme}
+  username: ${DB_USER_NAME:sa}
+  password: ${DB_USER_NAME:sa}
+  
