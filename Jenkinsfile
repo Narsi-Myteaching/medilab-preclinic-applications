@@ -22,7 +22,7 @@ pipeline {
         stage('copy the files to ansible server'){
             steps{
                 echo 'connecting to ansible server'
-                sshagent(['medilab-ansible-controller-server']) {
+                sshagent(['Ansible-Server-Machine']) {
                     //Dockerfile,jfrog.sh,artifactory-playbook.yml
                     sh 'scp Dockerfile ansible-admin@172.31.28.198:/opt/app-files'
                     sh 'scp jfrog.sh ansible-admin@172.31.28.198:/opt/app-files'
