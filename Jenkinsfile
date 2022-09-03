@@ -29,7 +29,7 @@ pipeline {
                     sh 'scp artifactory-playbook.yml ansible-admin@172.31.28.198:/opt/app-files'
 
                     sh '''
-                     ssh --tt ansible-admin@172.31.28.198 << EOF
+                     ssh -tt ansible-admin@172.31.28.198 << EOF
                      ansible-playbook  /opt/app-files/artifactory-playbook.yml    
                      exit
                      EOF
