@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Narsi-Myteaching 
+Narsi-Myteaching
+/
+medilab-preclinic-applications
+Public
+Code
+Issues
+Pull requests
+7
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+medilab-preclinic-applications/Jenkinsfile
+@Narsi-Myteaching
+Narsi-Myteaching Update Jenkinsfile
+Latest commit 4ad1fed 6 days ago
+ History
+ 1 contributor
+35 lines (33 sloc)  1.2 KB
+
 pipeline {
     agent any
     tools {
@@ -27,6 +57,13 @@ pipeline {
                     sh 'scp Dockerfile ansible-admin@172.31.28.198:/opt/app-files'
                     sh 'scp jfrog.sh ansible-admin@172.31.28.198:/opt/app-files'
                     sh 'scp artifactory-playbook.yml ansible-admin@172.31.28.198:/opt/app-files'
+
+                    sh '''
+                     ssh --tt ansible-admin@172.31.28.198 << EOF
+                     ansible-playbook  /opt/app-files/artifactory-playbook.yml    
+                     exit
+                     EOF
+                    '''
                 }
 
             }
