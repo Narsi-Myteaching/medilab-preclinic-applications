@@ -38,5 +38,10 @@ pipeline {
 
             }
         }
+        stage("trigger application db deploy job"){
+          steps{
+              build job: 'medilab-preclinic-CD-db-deployment-pipeline'
+          }
+      }
     }
 }
