@@ -11,8 +11,8 @@
      shell: chmod 777 ./app-files/jfrog.sh
    - name: execute the jfrog.sh file
      shell: sh ./app-files/jfrog.sh
-   - name: remove all the dangling images
-     shell: echo admin | sudo -S docker rmi -f $(docker images -q)   
+   #- name: remove all the dangling images
+    # shell: echo admin | sudo -S docker rmi -f $(docker images -q)   
    - name: build the docker image
      shell: echo admin | sudo -S docker build -f ./app-files/Dockerfile --tag narsi1839/medilab-cd-app-image ./app-files/
    - name: push the docker image to docker hub
